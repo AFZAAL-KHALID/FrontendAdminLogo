@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --main-color: #ef233c;
+  --bg-color: #edf2f4;
+}
+@font-face {
+    font-family: logoFont;
+    src: url(../public/Fonts/QurovaDEMO-Bold-BF67a5c637eed62.otf);
+}
+@font-face {
+    font-family: Rockybilly;
+    src: url(../public/Fonts/Rockybilly.ttf);
+}
+@font-face {
+    font-family: MuckleyBold;
+    src: url(../public/Fonts/MuckleyBold.ttf);
+}
+@font-face {
+    font-family: LoginFont;
+    src: url(../public/Fonts/Chillax-Variable.ttf);
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* glass effect */
+.logoutTitle{
+  background: rgba(255, 255, 255, 0.21);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(11.6px);
+-webkit-backdrop-filter: blur(11.6px);
+}
+
+::selection{
+  background-color: #00b4d8;
+  color: #edf2f4;
+}
