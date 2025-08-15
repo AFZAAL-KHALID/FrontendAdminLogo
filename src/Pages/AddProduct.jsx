@@ -6,6 +6,7 @@ import CustomToast from "../Components/CostumToast.jsx";
 import { toast } from "react-toastify";
 import Loader from "../Components/Loader.jsx";
 import { MdOutlineFileDownloadDone } from "react-icons/md"; //icon
+import { IoIosArrowRoundBack } from "react-icons/io"; //icon
 
 const AddProduct = () => {
   const navigate = useNavigate();
@@ -120,6 +121,14 @@ const AddProduct = () => {
   } else
     return (
       <>
+        <div
+          onClick={() => navigate("/")}
+          className="flex justify-center items-center mx-3 my-2 gap-2 hover:font-semibold cursor-pointer"
+        >
+          <IoIosArrowRoundBack className="text-gray-400" />
+          <h2 className="text-gray-400">Home</h2>
+        </div>
+
         <div className="w-full h-full p-2 md:px-15 lg:px-20 overflow-hidden">
           {success ? <CustomToast /> : ""}
 
@@ -129,7 +138,7 @@ const AddProduct = () => {
           >
             {/* Upload Images */}
             <div className="imagesDIV ">
-              <h2 className="font-semibold text-xl">Upload Images</h2>
+              <h2 className="font-semibold text-xl text-[var(--heading-color)]">Upload Images</h2>
 
               {/* Main Images */}
               <label htmlFor="image1">
@@ -141,7 +150,7 @@ const AddProduct = () => {
                     image1
                       ? "h-15 sm:h-30  sm:w-25"
                       : " h-14 sm:h-24 opacity-50"
-                  } w-14 sm:w-24 border-1 cursor-pointer  rounded-sm hover:shadow-2xl hover:scale-105 transition-all duration-300`}
+                  } w-14 sm:w-24 border-1 border-[var(--heading-color)] cursor-pointer  rounded-sm hover:shadow-2xl hover:scale-105 transition-all duration-300`}
                   src={
                     !image1
                       ? "/images/upload-icon-30.png"
@@ -169,7 +178,7 @@ const AddProduct = () => {
                       image2
                         ? "h-15 sm:h-30  sm:w-25"
                         : " h-10 sm:h-20 opacity-50"
-                    } w-10 sm:w-20 border-1 cursor-pointer  rounded-sm hover:shadow-2xl hover:scale-105 transition-all duration-300`}
+                    } w-10 sm:w-20 border-1 border-[var(--heading-color)] cursor-pointer  rounded-sm hover:shadow-2xl hover:scale-105 transition-all duration-300`}
                     src={
                       !image2
                         ? "/images/upload-icon-30.png"
@@ -193,7 +202,7 @@ const AddProduct = () => {
                       image3
                         ? "h-15 sm:h-30  sm:w-25"
                         : " h-10 sm:h-20 opacity-50"
-                    } w-10 sm:w-20 border-1 cursor-pointer  rounded-sm hover:shadow-2xl hover:scale-105 transition-all duration-300`}
+                    } w-10 sm:w-20 border-1 border-[var(--heading-color)] cursor-pointer  rounded-sm hover:shadow-2xl hover:scale-105 transition-all duration-300`}
                     src={
                       !image3
                         ? "/images/upload-icon-30.png"
@@ -219,7 +228,7 @@ const AddProduct = () => {
                       image4
                         ? "h-15 sm:h-30  sm:w-25"
                         : " h-10 sm:h-20 opacity-50"
-                    } w-10 sm:w-20 border-1 cursor-pointer  rounded-sm hover:shadow-2xl hover:scale-105 transition-all duration-300`}
+                    } w-10 sm:w-20 border-1 border-[var(--heading-color)] cursor-pointer  rounded-sm hover:shadow-2xl hover:scale-105 transition-all duration-300`}
                     src={
                       !image4
                         ? "/images/upload-icon-30.png"
@@ -245,7 +254,7 @@ const AddProduct = () => {
                       image5
                         ? "h-15 sm:h-30  sm:w-25"
                         : " h-10 sm:h-20 opacity-50"
-                    } w-10 sm:w-20 border-1 cursor-pointer  rounded-sm hover:shadow-2xl hover:scale-105 transition-all duration-300`}
+                    } w-10 sm:w-20 border-1 border-[var(--heading-color)] cursor-pointer  rounded-sm hover:shadow-2xl hover:scale-105 transition-all duration-300`}
                     src={
                       !image5
                         ? "/images/upload-icon-30.png"
@@ -266,25 +275,25 @@ const AddProduct = () => {
 
             {/* product Name */}
             <div className="w-full  my-2 md:my-6">
-              <h2 className="font-semibold  text-xl">Product Name</h2>
+              <h2 className="font-semibold text-[var(--heading-color)] text-xl">Product Name</h2>
               <input
                 onChange={(e) => setname(e.target.value)}
                 type="text"
                 value={name}
                 required
-                className="w-full lg:w-1/2 border-1 focus:border-pink-600 border-gray-400 outline-0 rounded-sm px-4 py-2 placeholder:text-gray-400 placeholder:text-sm text-xl"
+                className="w-full lg:w-1/2 border-1 text-[var(--heading-color)] focus:border-pink-600 border-gray-400 outline-0 rounded-sm px-4 py-2 placeholder:text-gray-400 placeholder:text-sm text-xl"
                 placeholder="Your Product Name"
               />
             </div>
 
             {/* product description  */}
             <div className="w-full  my-2 md:my-6">
-              <h2 className="font-semibold  text-xl">description </h2>
+              <h2 className="font-semibold text-[var(--heading-color)] text-xl">description </h2>
               <textarea
                 onChange={(e) => setdescription(e.target.value)}
                 value={description}
                 required
-                className="w-full lg:w-1/2 min-h-[60px] focus:border-pink-600 max-h-[300px] border-1 border-gray-400 outline-0 rounded-sm px-4 py-4 placeholder:text-gray-400 placeholder:text-sm text-xl"
+                className="w-full lg:w-1/2 min-h-[60px] text-[var(--heading-color)] focus:border-pink-600 max-h-[300px] border-1 border-gray-400 outline-0 rounded-sm px-4 py-4 placeholder:text-gray-400 placeholder:text-sm text-xl"
                 placeholder="Product description "
               />
             </div>
@@ -293,19 +302,19 @@ const AddProduct = () => {
             <div className="glassCategory w-full lg:w-1/2   my-2 md:my-6 flex flex-col lg:flex-row gap-2">
               {/* Category */}
               <div className="w-full lg:w-1/3 ">
-                <h2 className="font-semibold  text-xl">Product Category</h2>
+                <h2 className="font-semibold text-[var(--heading-color)] text-xl">Product Category</h2>
                 <select
                   onChange={(e) => setCategory(e.target.value)}
                   value={category}
                   required
                   className={
-                    "w-full  border-1 focus:border-pink-600 border-gray-400 outline-0 rounded-sm px-4 py-3 cursor-pointer"
+                    "w-full text-gray-600 border-1 focus:border-pink-600 border-gray-400 outline-0 rounded-sm px-4 py-3 cursor-pointer"
                   }
                 >
-                  <option value="" disabled hidden className="">
+                  <option value="" disabled hidden className="text-[var(--heading-color)]">
                     Select category
                   </option>
-                  <option value="Men">Men</option>
+                  <option  value="Men">Men</option>
                   <option value="Women">Women</option>
                   <option value="Kids">Kids</option>
                   <option value="Accessories">Accessories</option>
@@ -314,11 +323,11 @@ const AddProduct = () => {
 
               {/*sub Cat */}
               <div className="w-full lg:w-1/3">
-                <h2 className="font-semibold  text-xl">Sub Category</h2>
+                <h2 className="font-semibold text-[var(--heading-color)] text-xl">Sub Category</h2>
                 <select
                   value={subcategory}
                   onChange={(e) => setsubcategory(e.target.value)}
-                  className="w-full  border-1 focus:border-pink-600 border-gray-400 outline-0 rounded-sm px-4 py-3 cursor-pointer"
+                  className="w-full text-gray-600 border-1 focus:border-pink-600 border-gray-400 outline-0 rounded-sm px-4 py-3 cursor-pointer"
                   required
                 >
                   <option value="" disabled hidden className="">
@@ -332,14 +341,14 @@ const AddProduct = () => {
 
               {/*Price */}
               <div className="w-full lg:w-1/3 ">
-                <h2 className="font-semibold  text-xl">Product Price</h2>
+                <h2 className="font-semibold text-[var(--heading-color)] text-xl">Product Price</h2>
                 <input
                   onChange={(e) => setprice(e.target.value)}
                   value={price}
                   type="number"
                   min={1}
                   required
-                  className="w-full focus:border-pink-600  border-1 placeholder:text-gray-400 placeholder:text-sm cursor-pointer border-gray-400 outline-0 rounded-sm px-4 py-2 text-xl"
+                  className="w-full focus:border-pink-600 text-[var(--heading-color)] border-1 placeholder:text-gray-400 placeholder:text-sm cursor-pointer border-gray-400 outline-0 rounded-sm px-4 py-2 text-xl"
                   placeholder="Rs."
                 ></input>
               </div>
@@ -347,7 +356,7 @@ const AddProduct = () => {
 
             {/* Sizes */}
             <div className="w-full  my-2 md:my-6">
-              <h2 className="font-semibold  text-xl">Size</h2>
+              <h2 className="font-semibold text-[var(--heading-color)] text-xl">Size</h2>
               <div className="w-full flex gap-2 flex-wrap">
                 {Sizes.map((size) => (
                   <span
@@ -362,8 +371,8 @@ const AddProduct = () => {
                     className={`${
                       selectedSizes.includes(size)
                         ? "bg-[var(--main-color)] text-white"
-                        : "hover:text-black"
-                    } w-[40px] h-[40px] text-center font-semibold p-2 rounded-sm text-gray-500 cursor-pointer border-1 hover:border-2  hover:scale-110 hover:shadow-2xl  border-gray-400 active:scale-90`}
+                        : "hover:font-bold"
+                    } w-[40px] text-[var(--heading-color)] h-[40px] text-center font-semibold p-2 rounded-sm  cursor-pointer border-1 hover:border-2  hover:scale-110 hover:shadow-2xl  border-gray-400 active:scale-90`}
                   >
                     {size}
                   </span>

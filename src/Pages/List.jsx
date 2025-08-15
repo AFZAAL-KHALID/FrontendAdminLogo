@@ -4,6 +4,7 @@ import Title from "../Components/Title.jsx";
 import axios from "axios";
 import { useEffect } from "react";
 import { RxUpdate } from "react-icons/rx"; //icon
+import { IoIosArrowRoundBack } from "react-icons/io"; //icon
 
 import Card from "../Components/Card.jsx";
 import { useNavigate } from "react-router-dom";
@@ -43,14 +44,25 @@ const List = () => {
   } else
     return (
       <>
+      
+        <div 
+        onClick={()=>navigate('/')}
+        className="flex justify-center items-center mx-3 my-2 gap-2 hover:font-semibold cursor-pointer">
+          <IoIosArrowRoundBack />
+          <h2>Home</h2>
+        </div>
+
         {products.length === 0 ? (
-          <div 
-            onClick={()=> navigate(0)}
-          className="w-full h-[80vh]  md:text-2xl flex justify-center cursor-pointer flex-col items-center text-xl text-gray-400">
+          <div
+            onClick={() => navigate(0)}
+            className="w-full h-[80vh]  md:text-2xl flex justify-center cursor-pointer flex-col items-center text-xl text-gray-400"
+          >
             <span>Nothing to show.</span>
             <span className="flex justify-start items-center gap-3 ">
-              <span className="font-semibold text-gray-600">Refresh the page!</span>
-               <RxUpdate />
+              <span className="font-semibold text-gray-600">
+                Refresh the page!
+              </span>
+              <RxUpdate />
             </span>
           </div>
         ) : (

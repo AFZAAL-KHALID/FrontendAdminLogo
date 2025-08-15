@@ -1,9 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --main-color: #ef233c;
+  --main-color: #ff4d4d;
   --bg-color: #edf2f4;
+  --heading-color: #000000;
+
 }
+
+.dark {
+  --main-color: #ff4d4d; /* slightly adjusted if needed */
+  --bg-color: #111822;
+  --heading-color: #f5f5f5;
+}
+
 @font-face {
     font-family: logoFont;
     src: url(../public/Fonts/QurovaDEMO-Bold-BF67a5c637eed62.otf);
