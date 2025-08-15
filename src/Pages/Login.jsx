@@ -41,7 +41,7 @@ const Login = () => {
   return (
     <>
       <div className="h-[80vh] w-full p-4  flex flex-col justify-center items-center ">
-    <div className="LOGO w-full text-start font-[logoFont] m-3 text-2xl">Logo.</div>
+    <div className="LOGO w-full text-start font-[logoFont] m-3 text-2xl ">Logo.</div>
 
         <h1 className="font-[LoginFont]  m-12 sm:m-9 text-4xl md:text-6xl ">
           Admin LogIn <br />
